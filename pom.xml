@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.0.0</version>
+		<version>3.2.0</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.iesvdm</groupId>
@@ -32,7 +32,9 @@
 			<!-- optional a true indica que si algún módulo tiene a este como dependencia
 			(spring_boot_web_mvc_jdbc_ventas) tiene que añadir expresamente esta dependencia
 			devtools marcada como optional a true-->
+
 		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -49,10 +51,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
-			<!-- dependencia para utilizar acceso a base de datos 
+			<!-- dependencia para utilizar acceso a base de datos
 			con estilo de sql directo sobre jdbc (JdbcTemplate) -->
-			<!-- Excluimos el Connection Pool de jdbc de tomcat, 
-			para usar el Hikari Connection Pool más veloz 
+			<!-- Excluimos el Connection Pool de jdbc de tomcat,
+			para usar el Hikari Connection Pool más veloz
 			https://github.com/brettwooldridge/HikariCP-->
 			<exclusions>
 				<exclusion>
@@ -61,7 +63,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<!-- añadimos el connection pool Hikari compatible con java11+, 
+		<!-- añadimos el connection pool Hikari compatible con java11+,
 			automáticamente spring boot lo cogerá en vez
 			del connection pool de tomcat que hemos excluido -->
 		<dependency>
@@ -70,6 +72,11 @@
 			<version>5.0.1</version>
 			<!-- hay que aceptar el warning para compatibilidad con java11+
 			https://github.com/brettwooldridge/HikariCP-->
+		</dependency>
+		<dependency>
+			<groupId>org.iesvdm</groupId>
+			<artifactId>spring_boot_web_mvc_jdbc_ventas</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
@@ -90,6 +97,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
